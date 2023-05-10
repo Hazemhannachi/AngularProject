@@ -1,0 +1,9 @@
+<div *ngFor="let emploi of filtredListEmploi">
+    <div>{{emploi.entreprise}}</div>
+    <button [disabled]="emploi.etat">Postuler</button>
+</div>
+<hr>
+<button (click)="calculateBilan()">Bilan</button>
+<div>{{nbrOffre}}</div>
+<hr>
+<input type="text" id="filter" (keyup)="filter($event)">

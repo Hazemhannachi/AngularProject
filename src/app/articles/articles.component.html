@@ -1,0 +1,10 @@
+<p>{{titre}}</p>
+<div *ngFor="let article of listArticles | slice: 0: nbrArticles">
+    <fieldset *ngIf="article.categorie !== 'Travail'" [ngStyle]="{'background': article.categorie == 'Education' ? 'blue' : 'whithe'}">
+        <legend>{{article.titre}}</legend>
+        <div>Autheur: {{article.auteur}}</div>
+        <div>Date: {{article.date}}</div>
+        <div>Contenu: {{article.contenu}}</div>
+    </fieldset>
+</div>
+<input type="text" value="{{nbrArticles}}" (keyup)="keyUp($event)">
